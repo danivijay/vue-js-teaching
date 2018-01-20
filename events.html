@@ -11,19 +11,23 @@
 <body>
   <div id="vue-app">
     <h1>Events</h1>
+    <a @click.prevent="clickblocker" href="https://danivijay.com">danivijay.com</a>
+    <br><br>
+
     <button
       @click="plus(1)"
-      @dblclick="plus(10)"
+      @dblclick.once="plus(10)"
       style="width: 80px">+</button>
-      <p>my age is {{age}}</p>
-      <button
+    <p>my age is {{age}}</p>
+    <button
       @click="plus(-1)"  
-      @dblclick="plus(-10)"
+      @dblclick.once="plus(-10)"
       style="width: 80px">-</button>
-      <br><br>
-      <div id="canvas" @mousemove="updateXY">
-        {{x}}, {{y}}
-      </div>
+    <br><br>
+    
+    <div id="canvas" @mousemove="updateXY">
+      {{x}}, {{y}}
+    </div>
   </div>
   <script src="./app2.js"></script>
 </body>
