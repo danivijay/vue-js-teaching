@@ -4,7 +4,9 @@ new Vue({
     fname: 'Dani',
     profile: {
       lname: 'Vijay'
-    }
+    },
+    url: 'https://danivijay.com',
+    blog: '<a href="https://utmostdev.com">Blog</a>'
   },
   methods: {
     greetme: function(time) {
