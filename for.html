@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue JS Test App</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="vue-app">
+    <h1>D App</h1>
+    <ul>
+      <li v-for="(vehicle, index) in vehicles"> {{ index }} - {{ vehicle }} </li>
+    </ul>
+    <br>-----<br>
+    <template v-for="carbrand in carbrands">
+      <h3>{{ carbrand.name }}</h1>
+      <h4>{{ carbrand.country }}</h1>
+    </template>
+    -----
+    <br><br>
+    <template v-for="carbrand in carbrands">
+      <div v-for="(key, value) in carbrand">
+        <span>{{ key }}: {{ value }}</span>
+        <br><br>
+      </div>
+    </template>
+  <script src="./app5.js"></script>
+</body>
+</html>
