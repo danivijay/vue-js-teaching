@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Punchbag game</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <style>
+    #bag-img {
+      height: 500px;
+      width: 200px;
+      background-image: url('./img/bag.png');
+      margin: 10px auto;
+    }
+    #bag-img.burst {
+      background-image: url('./img/bag-burst.png');
+    }
+    #bag-controls {
+      width: 100%;
+      text-align: center;
+      margin: 10px auto;
+    }
+    #health-fill {
+      height:100%;
+      background: red;
+    }
+    #health-outline {
+      height: 20px;
+      width: 300px;
+      border: solid 2px black;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="vue-app">
+    <!-- bag img -->
+    <div :class="{burst: ended}" id="bag-img"></div>
+
+    <!-- bag health -->
+    <div id="health-outline">
+      <div id="health-fill" :style="{width: health + '%'}"></div>
+    </div>
+
+    <!-- bag controls -->
+    <div id="bag-controls">
+      <input v-show="!ended" type="button" value="Punch" @click="punch">
+      <input type="button" value="Reset" @click="reset">
+    </div>
+  </div>
+  <script src='punchbag.js'></script>
+</body>
+</html>
